@@ -115,7 +115,7 @@ function(input, output, session) {
     collapsibleTreeNetwork(
       treeDf(),
       c("s", "o"),
-      linkLength  = 100,
+      linkLength  = 250,
       fontSize    = 12, 
       fill        = "fillColor",
       nodeSize    = NULL,         # All nodes same size

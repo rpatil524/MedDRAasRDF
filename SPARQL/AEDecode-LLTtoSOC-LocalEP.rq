@@ -1,0 +1,21 @@
+# AEDecode-LLTtoSOC-LocalEP.rq
+# 
+
+PREFIX meddra: <https://w3id.org/phuse/meddra#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?LLT ?PT ?HLT ?HLGT ?SOC
+WHERE{
+  meddra:m10003851  meddra:hasPT   ?PTIRI ;
+                    skos:prefLabel ?LLT .
+  
+  ?PTIRI   meddra:hasHLT  ?HLTIRI  ;
+           skos:prefLabel ?PT .
+
+  ?HLTIRI  meddra:hasHLGT ?HLGTIRI ;
+           skos:prefLabel ?HLT .
+  ?HLGTIRI meddra:hasSOC  ?SOCIRI  ;
+           skos:prefLabel ?HLGT .
+  ?SOCIRI  skos:prefLabel ?SOC .            
+  
+}

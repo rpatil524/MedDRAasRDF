@@ -1,0 +1,20 @@
+# LLT-PathTo-SOC-VIS.rq
+# Specified predicates from LLT to SOC for a given LLT code
+
+PREFIX meddra: <https://w3id.org/phuse/meddra#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX x: <example.org/foo/>
+
+
+DESCRIBE  ?llt ?lltLabel ?s ?p ?o
+
+WHERE { 
+  ?llt (x:foo|!x:bar)* ?s . 
+  ?llt skos:prefLabel ?lltLabel .
+  ?s ?p ?o . 
+  # ?s skos:prefLabel ?label .
+  FILTER (regex(STR(?llt), "m10003058"))
+  FILTER regex(STR(?p), "hasLT|hasLT|hasHLT|hasHLGT|hasSOC|prefLabel")
+
+}
+

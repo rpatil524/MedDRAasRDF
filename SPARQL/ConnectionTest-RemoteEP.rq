@@ -1,0 +1,15 @@
+# ConnectionTest-RemoteEP.rq
+#   Test query to the remote MedDRA EP
+SELECT *
+WHERE{
+
+  SERVICE <http://34.216.170.22:5820/MedDRA211/query>
+  {
+    SELECT ?s ?p ?o
+    WHERE
+    {
+      ?s ?p ?o
+    }LIMIT 10
+  }
+  
+}  

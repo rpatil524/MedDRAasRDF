@@ -1,5 +1,5 @@
 #______________________________________________________________________________
-# FILE: r/vis/MedDRALTtoSOCVis-app/server.R
+# FILE: r/vis/MedDRALTtoSOCVis-app/ui.R
 # DESC: MedDRA visualization from LT to SOC 
 # SRC :
 # IN  : 
